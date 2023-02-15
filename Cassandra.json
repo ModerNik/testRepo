@@ -1,0 +1,1090 @@
+{
+    "modelName": "GoPay",
+    "collections": [
+        {
+            "collectionName": "users",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "user_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "uuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": true,
+                    "compositeClusteringKey": false,
+                    "GUID": "b140c15e-ded8-4158-bd3e-7240a5164dda",
+                    "required": true,
+                    "static": true,
+                    "childRelationships": [
+                        "fa262959-ced0-42b0-b655-10ad5c7d2acb",
+                        "77a1c726-ddf7-4e1c-9766-62bae3feb242"
+                    ],
+                    "code": "user_id",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "email",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "16b11d6a-158d-4332-b71c-d5c1594dc218",
+                    "code": "email",
+                    "required": true,
+                    "format": "email",
+                    "error": {}
+                },
+                {
+                    "name": "password",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "e5883ce2-ae11-4e9a-927a-ae877e301e02",
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "ffd986a9-d900-4b92-b164-112e038c6f4c"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "collectionUsers": [],
+            "tableIfNotExist": false,
+            "searchIndexIfNotExist": false,
+            "GUID": "78db3de4-705c-4fbe-8793-8665e4da2228",
+            "bucketId": "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f",
+            "code": "users",
+            "compositePartitionKey": [
+                {
+                    "keyId": "b140c15e-ded8-4158-bd3e-7240a5164dda",
+                    "type": ""
+                }
+            ]
+        },
+        {
+            "collectionName": "tokens",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "user_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "uuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": true,
+                    "compositeClusteringKey": false,
+                    "GUID": "75b9cc6e-94bb-4313-ad6b-b68930e36f73",
+                    "required": true,
+                    "foreignCollection": "78db3de4-705c-4fbe-8793-8665e4da2228",
+                    "static": true,
+                    "parentRelationship": "fa262959-ced0-42b0-b655-10ad5c7d2acb",
+                    "code": "user_id",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "session_token",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "098e938b-8633-4391-929b-b2197b03edf5",
+                    "required": true,
+                    "code": "session_token",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "refresh_token",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "1f05c79f-ddb0-4032-b047-dad435a6d22b",
+                    "required": true,
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "code": "refresh_token",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "dae558b5-a818-493b-8ea5-fd6340c26f37"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "collectionUsers": [],
+            "tableIfNotExist": false,
+            "searchIndexIfNotExist": false,
+            "GUID": "b5156d3d-d867-4c6e-af05-623440423bb0",
+            "bucketId": "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f",
+            "compositePartitionKey": [
+                {
+                    "keyId": "75b9cc6e-94bb-4313-ad6b-b68930e36f73",
+                    "type": ""
+                }
+            ],
+            "compositeClusteringKey": []
+        },
+        {
+            "collectionName": "users_data",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "user_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "uuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": true,
+                    "compositeClusteringKey": false,
+                    "GUID": "1dfb481f-36d8-48bc-8515-15a5d1b69b94",
+                    "parentRelationship": "77a1c726-ddf7-4e1c-9766-62bae3feb242",
+                    "foreignCollection": "78db3de4-705c-4fbe-8793-8665e4da2228",
+                    "foreignField": [
+                        "78db3de4-705c-4fbe-8793-8665e4da2228",
+                        "b140c15e-ded8-4158-bd3e-7240a5164dda"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "required": true,
+                    "code": "user_id",
+                    "static": true,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "667eb1d3-888d-4ced-bcdf-538f36549bc7",
+                    "name": "email",
+                    "code": "email",
+                    "format": "email",
+                    "error": {}
+                },
+                {
+                    "name": "login",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "622b7dd3-baf6-4868-9e78-de8293c8238f",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "code": "login"
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "99057e90-f2fd-4f64-8e50-9d12388bae34",
+                    "name": "name",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "code": "name"
+                },
+                {
+                    "name": "avatar",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "blb",
+                    "subtype": "object",
+                    "childType": "blob",
+                    "type": "jsonObject",
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "808a37e1-a79f-4ae5-bbe7-7fe865d3118f",
+                    "static": false,
+                    "properties": [],
+                    "additionalProperties": false,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "c5587465-122f-4e36-a268-e6434221abd5",
+                    "name": "role",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "code": "role"
+                },
+                {
+                    "name": "interests",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "subtype": "list<str>",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "primaryKey": false,
+                            "mode": "text",
+                            "subtype": "string",
+                            "childType": "char",
+                            "type": "string",
+                            "compositeKey": [
+                                "compositePartitionKey",
+                                "compositeClusteringKey"
+                            ],
+                            "compositePartitionKey": false,
+                            "compositeClusteringKey": false,
+                            "GUID": "c5c5433b-00fe-4c63-b5a0-1fba7d599868",
+                            "arrayItem": true,
+                            "arrayParentType": "list",
+                            "displayName": "interest",
+                            "error": {}
+                        }
+                    ],
+                    "primaryKey": false,
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "childType": "list",
+                    "type": "array",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "790215bd-abe7-4fb3-9379-26294b85590b",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "64d1ee97-7170-4a1a-a2aa-b68904ad0f0a"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "collectionUsers": [],
+            "tableIfNotExist": false,
+            "searchIndexIfNotExist": false,
+            "GUID": "5d203aaf-c9a3-4d17-bc38-ff7794829df4",
+            "bucketId": "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f",
+            "hackoladeMeta": {},
+            "code": "users_data",
+            "tableOptions": {
+                "GUID": "98541994-aa2b-4678-aaa8-bec6af49dc55"
+            },
+            "compositePartitionKey": [
+                {
+                    "keyId": "1dfb481f-36d8-48bc-8515-15a5d1b69b94",
+                    "type": ""
+                }
+            ]
+        },
+        {
+            "collectionName": "pages",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "author_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "uuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": true,
+                    "compositeClusteringKey": false,
+                    "GUID": "2fa2d2ba-2782-4dc8-b693-b8de07738d41",
+                    "code": "author_id",
+                    "required": true,
+                    "childRelationships": [
+                        "dd25f59d-c09d-46b1-ab7f-c69ca952ec90"
+                    ],
+                    "static": true,
+                    "error": {}
+                },
+                {
+                    "name": "page_name",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "de79aeb5-761a-4bb3-b898-2c3785793d8d",
+                    "code": "page_name",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "31a56b30-e4ec-4a58-8c30-7abbefbae229",
+                    "name": "page_logo",
+                    "code": "page_logo",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "cf07219f-1dc9-44ba-b167-a28ca4373fa6",
+                    "name": "title",
+                    "error": {}
+                },
+                {
+                    "name": "description",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "6ce1097d-3314-4145-addf-cfc15d1eb540",
+                    "error": {}
+                },
+                {
+                    "name": "country",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "8cca8324-6aed-4eeb-ab37-56e469c58dbe",
+                    "error": {}
+                },
+                {
+                    "name": "city",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "mode": "text",
+                    "subtype": "string",
+                    "childType": "char",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "a4ff73a9-6f35-4508-91fb-b245e0c09ffb",
+                    "error": {}
+                },
+                {
+                    "name": "categories",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "subtype": "list<str>",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "primaryKey": false,
+                            "mode": "text",
+                            "subtype": "string",
+                            "childType": "char",
+                            "type": "string",
+                            "compositeKey": [
+                                "compositePartitionKey",
+                                "compositeClusteringKey"
+                            ],
+                            "compositePartitionKey": false,
+                            "compositeClusteringKey": false,
+                            "GUID": "3fe59beb-e1a6-48db-8bb4-998dce862a84",
+                            "arrayItem": true,
+                            "arrayParentType": "list",
+                            "displayName": "category",
+                            "error": {}
+                        }
+                    ],
+                    "primaryKey": false,
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "childType": "list",
+                    "type": "array",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "b53077e9-93ea-4272-98e0-68e3652e804c",
+                    "error": {}
+                },
+                {
+                    "name": "links",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "subtype": "list<map>",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "subtype": "map<str>",
+                            "keyType": "char",
+                            "keySubtype": "text",
+                            "primaryKey": false,
+                            "properties": [
+                                {
+                                    "name": "title",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "primaryKey": false,
+                                    "mode": "text",
+                                    "subtype": "object",
+                                    "childType": "char",
+                                    "type": "jsonObject",
+                                    "compositePartitionKey": false,
+                                    "compositeClusteringKey": false,
+                                    "GUID": "4950614f-9975-49c9-8963-36d09c164b7a",
+                                    "properties": [],
+                                    "error": {}
+                                },
+                                {
+                                    "name": "url",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "primaryKey": false,
+                                    "mode": "text",
+                                    "subtype": "string",
+                                    "childType": "char",
+                                    "type": "string",
+                                    "compositeKey": [
+                                        "compositePartitionKey",
+                                        "compositeClusteringKey"
+                                    ],
+                                    "compositePartitionKey": false,
+                                    "compositeClusteringKey": false,
+                                    "GUID": "0f40ffe4-f3c4-4db8-ac8e-359a3487b2ee",
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "childType": "map",
+                            "type": "document",
+                            "compositeKey": [
+                                "compositePartitionKey",
+                                "compositeClusteringKey"
+                            ],
+                            "compositePartitionKey": false,
+                            "compositeClusteringKey": false,
+                            "GUID": "d351c689-7d75-4f73-9f05-fa9ff8b1d54f",
+                            "arrayItem": true,
+                            "arrayParentType": "list"
+                        }
+                    ],
+                    "primaryKey": false,
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "childType": "list",
+                    "type": "array",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "required": false,
+                    "GUID": "8431ca68-9ee0-4ff9-ac0b-773afc6f3bab",
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "primaryKey": false,
+                    "childType": "date",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": false,
+                    "GUID": "71e5a169-07d6-43fe-aec6-408448596557",
+                    "name": "creation_date",
+                    "static": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e26bc9e0-b4b1-4303-a61e-a4881a842bf0"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "collectionUsers": [],
+            "tableIfNotExist": false,
+            "searchIndexIfNotExist": false,
+            "GUID": "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+            "bucketId": "f9202de9-90c7-45db-9266-bc40d9aee56f",
+            "code": "pages",
+            "compositePartitionKey": [
+                {
+                    "keyId": "2fa2d2ba-2782-4dc8-b693-b8de07738d41",
+                    "type": ""
+                }
+            ]
+        },
+        {
+            "collectionName": "subscribers_by_author",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "author_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "uuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": true,
+                    "compositeClusteringKey": false,
+                    "GUID": "e390165c-859d-43a7-82a9-97f6e46bb5b3",
+                    "required": true,
+                    "parentRelationship": "dd25f59d-c09d-46b1-ab7f-c69ca952ec90",
+                    "foreignCollection": "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+                    "foreignField": [
+                        "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+                        "2fa2d2ba-2782-4dc8-b693-b8de07738d41"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "code": "author_id",
+                    "static": true,
+                    "error": {}
+                },
+                {
+                    "name": "user_id",
+                    "hackoladeMeta": {
+                        "namingConvention": ""
+                    },
+                    "isActivated": true,
+                    "primaryKey": true,
+                    "childType": "timeuuid",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositePartitionKey",
+                        "compositeClusteringKey"
+                    ],
+                    "compositePartitionKey": false,
+                    "compositeClusteringKey": true,
+                    "GUID": "e219c6fc-a149-40cc-b934-73cb399f8358",
+                    "required": true,
+                    "code": "user_id",
+                    "static": false,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "c8b4fe53-529c-4ba6-8517-1175d5a60aed"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "collectionUsers": [],
+            "tableIfNotExist": true,
+            "searchIndexIfNotExist": false,
+            "GUID": "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94",
+            "bucketId": "f9202de9-90c7-45db-9266-bc40d9aee56f",
+            "compositePartitionKey": [
+                {
+                    "keyId": "e390165c-859d-43a7-82a9-97f6e46bb5b3",
+                    "type": ""
+                }
+            ],
+            "compositeClusteringKey": [
+                {
+                    "keyId": "e219c6fc-a149-40cc-b934-73cb399f8358",
+                    "type": "ascending"
+                }
+            ]
+        }
+    ],
+    "buckets": [
+        {
+            "name": "users",
+            "type": "bucket",
+            "collectionIds": [
+                "78db3de4-705c-4fbe-8793-8665e4da2228",
+                "b5156d3d-d867-4c6e-af05-623440423bb0",
+                "5d203aaf-c9a3-4d17-bc38-ff7794829df4"
+            ],
+            "backgroundColor": {
+                "r": 252,
+                "g": 108,
+                "b": 133,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "replStrategy": "SimpleStrategy",
+            "addToCqlScript": true,
+            "keyspaceIfNotExist": false,
+            "GUID": "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f"
+        },
+        {
+            "name": "pages",
+            "type": "bucket",
+            "collectionIds": [
+                "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+                "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94"
+            ],
+            "backgroundColor": {
+                "r": 255,
+                "g": 152,
+                "b": 1,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "indexes": [],
+            "replStrategy": "SimpleStrategy",
+            "addToCqlScript": true,
+            "keyspaceIfNotExist": false,
+            "GUID": "f9202de9-90c7-45db-9266-bc40d9aee56f"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "token_by_user",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "78db3de4-705c-4fbe-8793-8665e4da2228",
+                    "b140c15e-ded8-4158-bd3e-7240a5164dda"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "b5156d3d-d867-4c6e-af05-623440423bb0",
+                    "75b9cc6e-94bb-4313-ad6b-b68930e36f73"
+                ]
+            ],
+            "childCardinality": "1",
+            "GUID": "fa262959-ced0-42b0-b655-10ad5c7d2acb",
+            "parentCollection": "78db3de4-705c-4fbe-8793-8665e4da2228",
+            "childCollection": "b5156d3d-d867-4c6e-af05-623440423bb0"
+        },
+        {
+            "name": "user_data_by_user",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "78db3de4-705c-4fbe-8793-8665e4da2228",
+                    "b140c15e-ded8-4158-bd3e-7240a5164dda"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5d203aaf-c9a3-4d17-bc38-ff7794829df4",
+                    "1dfb481f-36d8-48bc-8515-15a5d1b69b94"
+                ]
+            ],
+            "childCardinality": "1",
+            "GUID": "77a1c726-ddf7-4e1c-9766-62bae3feb242",
+            "parentCollection": "78db3de4-705c-4fbe-8793-8665e4da2228",
+            "childCollection": "5d203aaf-c9a3-4d17-bc38-ff7794829df4",
+            "hackoladeStyles": {
+                "GUID": "d0e49330-1f82-4e0d-a849-eb7839e1341f",
+                "thickness": 2,
+                "color": "#d80073"
+            }
+        },
+        {
+            "name": "subscribers_by_author",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+                    "2fa2d2ba-2782-4dc8-b693-b8de07738d41"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94",
+                    "e390165c-859d-43a7-82a9-97f6e46bb5b3"
+                ]
+            ],
+            "childCardinality": "1",
+            "GUID": "dd25f59d-c09d-46b1-ab7f-c69ca952ec90",
+            "parentCollection": "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+            "childCollection": "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94",
+            "hackoladeStyles": {
+                "GUID": "0c3d3f2d-5f0d-4604-ad82-6d3a584b2d66",
+                "thickness": 2,
+                "color": "#79c4ff"
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f": "users",
+        "78db3de4-705c-4fbe-8793-8665e4da2228": "users",
+        "b140c15e-ded8-4158-bd3e-7240a5164dda": "user_id",
+        "16b11d6a-158d-4332-b71c-d5c1594dc218": "email",
+        "e5883ce2-ae11-4e9a-927a-ae877e301e02": "password",
+        "b5156d3d-d867-4c6e-af05-623440423bb0": "tokens",
+        "75b9cc6e-94bb-4313-ad6b-b68930e36f73": "user_id",
+        "098e938b-8633-4391-929b-b2197b03edf5": "session_token",
+        "1f05c79f-ddb0-4032-b047-dad435a6d22b": "refresh_token",
+        "fa262959-ced0-42b0-b655-10ad5c7d2acb": "token_by_user",
+        "5d203aaf-c9a3-4d17-bc38-ff7794829df4": "users_data",
+        "1dfb481f-36d8-48bc-8515-15a5d1b69b94": "user_id",
+        "622b7dd3-baf6-4868-9e78-de8293c8238f": "login",
+        "c5587465-122f-4e36-a268-e6434221abd5": "role",
+        "99057e90-f2fd-4f64-8e50-9d12388bae34": "name",
+        "790215bd-abe7-4fb3-9379-26294b85590b": "interests",
+        "808a37e1-a79f-4ae5-bbe7-7fe865d3118f": "avatar",
+        "667eb1d3-888d-4ced-bcdf-538f36549bc7": "email",
+        "77a1c726-ddf7-4e1c-9766-62bae3feb242": "user_data_by_user",
+        "f9202de9-90c7-45db-9266-bc40d9aee56f": "pages",
+        "a7406c1a-d1ae-457f-9e65-3c85b46407ff": "pages",
+        "2fa2d2ba-2782-4dc8-b693-b8de07738d41": "author_id",
+        "de79aeb5-761a-4bb3-b898-2c3785793d8d": "page_name",
+        "6ce1097d-3314-4145-addf-cfc15d1eb540": "description",
+        "cf07219f-1dc9-44ba-b167-a28ca4373fa6": "title",
+        "8cca8324-6aed-4eeb-ab37-56e469c58dbe": "country",
+        "a4ff73a9-6f35-4508-91fb-b245e0c09ffb": "city",
+        "b53077e9-93ea-4272-98e0-68e3652e804c": "categories",
+        "8431ca68-9ee0-4ff9-ac0b-773afc6f3bab": "links",
+        "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94": "subscribers_by_author",
+        "e390165c-859d-43a7-82a9-97f6e46bb5b3": "author_id",
+        "e219c6fc-a149-40cc-b934-73cb399f8358": "user_id",
+        "dd25f59d-c09d-46b1-ab7f-c69ca952ec90": "subscribers_by_author",
+        "31a56b30-e4ec-4a58-8c30-7abbefbae229": "page_logo",
+        "71e5a169-07d6-43fe-aec6-408448596557": "creation_date",
+        "4950614f-9975-49c9-8963-36d09c164b7a": "title",
+        "0f40ffe4-f3c4-4db8-ac8e-359a3487b2ee": "url"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "3364ebad-a216-4921-b9bd-f2aed59ded51"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "cacfda42-3d30-4a7d-9582-b9ee0b29580d"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "5e001d33-9ff7-49af-bfa4-4856f1b8726d"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "4.x",
+    "dbVendor": "Cassandra",
+    "appTarget": "CASSANDRA",
+    "creationTS": "2023-01-01T23:27:16.875Z",
+    "GUID": "478aa759-6f1a-4933-9007-11500c60b19c",
+    "isLineageEnabled": false,
+    "lastModifTS": "2023-01-02T17:47:55.108Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginName": "Cassandra",
+        "pluginVersion": "0.1.123",
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.8.1"
+    },
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "78db3de4-705c-4fbe-8793-8665e4da2228",
+                        "x": 173,
+                        "y": 187,
+                        "width": 263,
+                        "height": 86,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "b5156d3d-d867-4c6e-af05-623440423bb0",
+                        "x": 165.79999999999984,
+                        "y": 333.0000000000001,
+                        "width": 279,
+                        "height": 95,
+                        "color": {
+                            "hex": "#673bb7"
+                        }
+                    },
+                    {
+                        "GUID": "5d203aaf-c9a3-4d17-bc38-ff7794829df4",
+                        "x": 521.8000000000035,
+                        "y": 235.79999999999967,
+                        "width": 298,
+                        "height": 176,
+                        "color": {
+                            "hex": "#d80073"
+                        }
+                    },
+                    {
+                        "GUID": "a7406c1a-d1ae-457f-9e65-3c85b46407ff",
+                        "x": 933.0666651407874,
+                        "y": 185.33333333333306,
+                        "width": 318,
+                        "height": 285,
+                        "color": {
+                            "hex": "#fec107"
+                        }
+                    },
+                    {
+                        "GUID": "a5bcbda8-c9ab-40dc-a694-0cd2defd9f94",
+                        "x": 1315.0666651407867,
+                        "y": 190.66666666666663,
+                        "width": 254,
+                        "height": 69,
+                        "color": {
+                            "hex": "#fec107"
+                        }
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 125.79999999999984,
+                        "y": 147,
+                        "GUID": "f9592e01-f4a7-4e92-b7f5-ae14ce97b60f"
+                    },
+                    {
+                        "x": 893.0666651407874,
+                        "y": 145.33333333333306,
+                        "GUID": "f9202de9-90c7-45db-9266-bc40d9aee56f"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "GUID": "b5156d3d-d867-4c6e-af05-623440423bb0",
+                        "autoWidth": true
+                    }
+                ]
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
